@@ -2,7 +2,7 @@
 Very simple Java image utility(lib)
 
 ## Revision History
-**Initial Release 0.1** (Oct 17, 2019)
+**Initial Release 0.1** (Feb 15, 2020)
 1. Resizing based on constant dimensions, or percent(ratio).
 2. Labeling target results using a hard-coded/constant literal at top-left.
 3. Ignoring target image creation when no any action required(when target will be as same as source)
@@ -91,8 +91,8 @@ Considering following steps need to be take in order to utilizing the lib for an
 6. Calling function `image_process` function inside `Image_Util` (note: It's blocking)  
 
 ### Example usage
-Please refer to `class Image_Util_Usage`([link](./src/giggle/tribe/util/Image_Util_Usage.java)) for some example usages.  
-**NOTE:** make sure you have set the `WORKING_PATH` in `Image_Util_Usage`
+#### Local system image file example
+Please refer to [https://github.com/911992/_Giggle_image_util_usage](https://github.com/911992/_Giggle_image_util_usage) repo for a sample usage. It comes with some embedded images for testing.   
 
 #### More Examples ToDo
 I hope I could prepare following examples as listed below not so late(or if someone could help, specially about Amazon S3)  
@@ -108,7 +108,11 @@ I hope I could prepare following examples as listed below not so late(or if some
 
 ### What are supported image formats as input?
 As `V0.1`, java AWT is in charge for loading image(same for writing it). So supported images are `JPEG`, `PNG`, `BMP`, `WBMP`, and `GIT`(probably just first frame).  
-Please refer to [https://docs.oracle.com/javase/7/docs/api/javax/imageio/package-summary.html](https://docs.oracle.com/javase/7/docs/api/javax/imageio/package-summary.html)
+Please refer to [https://docs.oracle.com/javase/7/docs/api/javax/imageio/package-summary.html](https://docs.oracle.com/javase/7/docs/api/javax/imageio/package-summary.html)  
+**NOTE:** As you like o go for `PNG` type, where transparency is one thing mention. By default(as `v0.1`) Lib fills up the target image with a solid color which is `TARGET_IMAGE_BACKGROUND_COLOR`. If keeping source transparency is an option, find and remove/comment the fill op in `image_process` function
+
+### What color is used to be replaced to transparent pixels in source file?
+Please refer to `TARGET_IMAGE_BACKGROUND_COLOR` int class `Image_Util`
 
 ### What is default type of output file? What are others supported?
 As `V0.1`, default file type for target artifact is `jpeg`. Supported output are depends on AWT supported types, probably as same as supported inputs.  
@@ -129,5 +133,3 @@ As `V0.1`, watermark options are hard-coded, and could be changed before any new
 Probably AWT(and dependent) libraries are not included in env/JRE. Make sure you have correct JRE profile installed.  
 Please read [https://docs.oracle.com/javase/8/embedded/develop-apps-platforms/compact-profiles.htm](https://docs.oracle.com/javase/8/embedded/develop-apps-platforms/compact-profiles.htm)
 
-### Running `Image_Util_Usage` results status code of 1, and an error message as "Error, please define WORKING_PATH variable as target accessible path for saving sample..."
-Make sure you have set the `WORKING_PATH` in `Image_Util_Usage`

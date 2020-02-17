@@ -5,6 +5,7 @@
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. --><project basedir="." default="build" name="giggle_tribe_image_handler">
     <property environment="env"/>
+    <property name="giggle_image_util_usage.location" value="../_Giggle_image_util_usage"/>
     <property name="ECLIPSE_HOME" value="E:/Eclipse/4.12/eclipse/"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.5"/>
@@ -34,7 +35,14 @@
             <classpath refid="giggle_tribe_image_handler.classpath"/>
         </javac>
     </target>
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="build.xml" dir="${giggle_image_util_usage.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${giggle_image_util_usage.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
     <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
         <copy todir="${ant.library.dir}">
             <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
@@ -47,10 +55,5 @@
     <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
-    </target>
-    <target name="Image_Util_Usage">
-        <java classname="giggle.tribe.util.Image_Util_Usage" failonerror="true" fork="yes">
-            <classpath refid="giggle_tribe_image_handler.classpath"/>
-        </java>
     </target>
 </project>
