@@ -72,13 +72,13 @@ EXIF: AWT-default (EXIF data from source file will be **removed**. Target file w
 Considering following steps need to be take in order to utilizing the lib for an image op.  
 1. Prepare an instance of `Image_Process_Setup` class, which will carry options/objectives lib need to know how to deal with a resizing request. This class has a private constructor, so cannot be instanciate explicitly. Instead, use it's `Builder` class.
 
-        ```java
+        ```
         /\* generating the setup instance, with 50% of input \*/
         Image_Process_Setup _con_ins = Image_Process_Setup.Builder.ratio_scale(0.49f).watermark(true).build();
         ```
 2. To avoid possible exception(`Bad_Image_Processing_State_Exception`), check if built instance has any conflict or not(recommended)
 
-        ```java
+        ```
         /* must return true if current state of the instance is one applicable */
         /* Beside being logical statement, it must not violet the policy lib has defined */
         if(_con_ins.is_applicable()){
