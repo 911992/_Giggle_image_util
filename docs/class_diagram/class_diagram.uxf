@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>592</x>
+      <y>240</y>
+      <w>172</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Giggle_Project_Meta
+--
+_+PROJECT_NAME : String_
+_+PROJECT_CODEBASE_NAME : String_
+_+PROJECT_VERSION : String_
+_+PROJECT_BUILD : String_
+--
+_-Giggle_Project_Meta() : Giggle_Project_Meta_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>512</x>
+      <y>108</y>
+      <w>452</w>
+      <h>688</h>
+    </coordinates>
+    <panel_attributes>giggle::tribe::util
+--
+layer=-100
+bg=#ffffee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>804</x>
+      <y>604</y>
+      <w>152</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Image_Resize_Listener
+--
+--
++trigger(Image_Resize_State) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>672</y>
+      <w>232</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+Image_Resize_State
+--
+Image_Resize_State_ERROR
+Image_Resize_State_IMAGE_IO_READ_BEGIN
+Image_Resize_State_IMAGE_FETCH_DIMENSION_BEGIN
+Image_Resize_State_CALCULATING_FINAL_IMAGE_DIMENSION_BEGIN
+Image_Resize_State_SOURCE_IMAGE_AS_TARGET
+Image_Resize_State_TARGET_IMAGE_CREATION_BEGIN
+Image_Resize_State_IMAGE_RESIZING_BEGIN
+Image_Resize_State_TARGET_IMAGE_IO_WRITE_BEGIN
+Image_Resize_State_PROCESS_FINISHED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>944</x>
+      <y>636</y>
+      <w>12</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=(+)-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>932</x>
+      <y>636</y>
+      <w>12</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>548</y>
+      <w>176</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;null object&gt;&gt;
+Image_listener_Null
+--
+_+GLOBAL_INSTANCE : Image_listener_Null_
+--
+-Image_listener_Null() : Image_listener_Null</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>808</x>
+      <y>580</y>
+      <w>12</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>784</x>
+      <y>128</y>
+      <w>172</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;immutable&gt;&gt;
+Image_Process_Setup
+--
+_+MIN_SCALE_FIT_WIDTH_HEIGHT : int_
+_+MAX_SCALE_FIT_WIDTH_HEIGHT : int_
+_+MIN_SCALE_RATIO : float_
+_+MAX_SCALE_RATIO : float_
+_-serialVersionUID : long_
+-resize_policy : Image_Resize_Mode
+-scale_fit_width : int
+-scale_fit_height : int
+-scale_ratio : float
+-with_watermark : boolean
+-ignore_image_enlarging : boolean
+-has_applicable_state : Boolean
+-instance_conflict_message : String
+--
+-Image_listener_Null():Image_listener_Null
++is_applicable() : boolean
++get_instance_state_conflict_message() : String
++is_applicable_sync() : boolean
++getSerialversionuid() : long
++getResize_policy() : Image_Resize_mode
++getScale_fit_width() : int
++getScale_fit_height() : int
++getScale_ratio() : float
++isWith_watermark() : boolan
++isIgnore_image_enlarging() : boolean
+-setResize_policy(Image_Resize_Mode) : void
+-setScale_fit_width(int) : void
+-setScale_fit_height(int) : void
+-setScale_ratio(float) : void
+-setWith_watermark(boolean) : void
+-setIgnore_image_enlarging(boolean) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>760</x>
+      <y>612</y>
+      <w>8</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>764</x>
+      <y>616</y>
+      <w>48</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>248</y>
+      <w>32</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>836</x>
+      <y>352</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+Image_Resize_Mode
+--
+ImageResizeMode_NONE
+ImageResizeMode_SCALE_RATIO
+ImageResizeMode_SCALE_FIT</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>932</x>
+      <y>332</y>
+      <w>12</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=(+)-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>904</x>
+      <y>332</y>
+      <w>12</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>548</x>
+      <y>128</y>
+      <w>188</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;builder&gt;&gt;
+&lt;&lt;static&gt;&gt;
+Builder
+--
+-_private_state : Image_Process_Setup
+--
+_-Giggle_Project_Meta() : Giggle_Project_Meta_ 
+--
+-Builder() : Builder
+_+no_scale_with_watermark() : Builder_
+_+ratio_scale(float) : Builder_
+_+fit_scale(int, int) : Builder_
++scale_ratio(float) : Builde 
++scale_fit(int, int) : Builde
++watermark(boolean) : Builde
++ignore_image_enlargement(boolean) : Builde
++build() : Image_Process_Setup</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>732</x>
+      <y>140</y>
+      <w>60</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=(+)-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>732</x>
+      <y>160</y>
+      <w>60</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+&lt;&lt;builds&gt;&gt;</panel_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>548</x>
+      <y>632</y>
+      <w>168</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>type=actclass
+Image_Util_Usage
+--
+_+WORKING_PATH : String_
+--
+_+resize1080_watermark()_
+_+watermark_only_no_resize()_
+_+no_enlarging_resize_no_watermark()_
+_+resize_ratio()_
+_+resize_ratio_with_listener()_
+_+main(String[]):void_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>636</y>
+      <w>108</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+m2=&lt;&lt;anon&gt;&gt;</panel_attributes>
+    <additional_attributes>250.0;10.0;250.0;40.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>576</x>
+      <y>412</y>
+      <w>380</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;stateless/core&gt;&gt;
+Image_Util
+--
+_+DEFAULT_IMAGE_SCALE_WIDTH : int_
+_+DEFAULT_IMAGE_SCALE_HEIGHT : int_
+_+DEFAULT_IMAGE_WATERMARK : boolean_
+_+WATERMARK_TEXT_MESSAGE : String_
+_+WATERMARK_TEXT_FONT_FAMILY : String_
+_+WATERMARK_TEXT_FONT_STYLE : int_
+_+WATERMARK_TEXT_FONT_SIZE : int_
+_+WATERMARK_SHADOW_COLOR : Color_
+_+WATERMARK_FORE_COLOR : Color_
+_+TARGET_IMAGE_BACKGROUND_COLOR : Color_
+_+WATERMARK_SHADOW_OFFSET : int_
+_+TARGET_IMAGE_TYPE : String_
+--
+-Image_Util() : Image_Util
+_+get_default_image_setup() : Image_Process_Setup_
+image_process(InputStream, Image_Process_Setup, OutputStream, Image_Resize_Listener) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>520</y>
+      <w>12</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>928</x>
+      <y>520</y>
+      <w>12</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>516</x>
+      <y>708</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>IO_Aux
+--
+_+BIO_BUFFER_SIZE : int_
+--
+-IO_Aux() : IO_Aux
++stream_cpy_bio(InputStream, OutputStream) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>576</x>
+      <y>312</y>
+      <w>192</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>ex
+--
+layer=-99
+bg=#ffeeee</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>584</x>
+      <y>328</y>
+      <w>176</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Exception&gt;&gt;
+Bad_Image_Processing_State_Exception
+--
+_-serialVersionUID : long_
+-message : String
+--
++Bad_Image_Processing_State_Exception(String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>520</x>
+      <y>752</y>
+      <w>84</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>file
+--
+03374_mthoodpainted_2880x1620.jpg
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>608</x>
+      <y>752</y>
+      <w>84</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>file
+--
+03824_autumnskyinnewyork_5120x2880.jpg
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>696</x>
+      <y>752</y>
+      <w>84</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>file
+--
+04053_portlandsunrise_3840x2160.jpg
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>784</x>
+      <y>752</y>
+      <w>84</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>file
+--
+04112_grosunset_3840x2160.jpg
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>872</x>
+      <y>752</y>
+      <w>84</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>file
+--
+04050_manhattanview_3840x2160.jpg
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>732</x>
+      <y>520</y>
+      <w>36</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=)-
+</panel_attributes>
+    <additional_attributes>60.0;250.0;10.0;250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>928</x>
+      <y>388</y>
+      <w>12</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>812</x>
+      <y>332</y>
+      <w>12</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>364</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;throws&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>548</x>
+      <y>228</y>
+      <w>12</w>
+      <h>412</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1010.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>364</x>
+      <y>108</y>
+      <w>144</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>*Document*
+Project: Giggle Image Lib
+Title: Lib Class Diagram
+Doc version: 0.1(Feb 15, 2020)
+Author(s):
+Arash (@911992) {principal author}
+*Meta Legends*
+
+valign=top
+halign=left
+layer=-100
+bg=light_gray
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>364</x>
+      <y>168</y>
+      <w>144</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>*Version History*
+--
+Initial release
+Author: Arashi
+
+valign=top
+halign=left
+layer=-100
+bg=light_gray
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

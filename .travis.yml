@@ -1,0 +1,8 @@
+#v0.1 (20200215)
+#may not be legit enough yet. ant script by Eclipse export
+language: java
+
+jdk:
+  - oraclejdk8
+
+script: ant build
