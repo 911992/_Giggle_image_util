@@ -73,7 +73,7 @@ Considering following steps need to be take in order to utilizing the lib for an
 1. Prepare an instance of `Image_Process_Setup` class, which will carry options/objectives lib need to know how to deal with a resizing request. This class has a private constructor, so cannot be instanciate explicitly. Instead, use it's `Builder` class.
 
 	```java
-	/\* generating the setup instance, with 50% of input \*/
+	/* generating the setup instance, with 50% of input */
 	Image_Process_Setup _con_ins = Image_Process_Setup.Builder.ratio_scale(0.49f).watermark(true).build();
 	```
 2. To avoid possible exception(`Bad_Image_Processing_State_Exception`), check if built instance has any conflict or not(recommended)
